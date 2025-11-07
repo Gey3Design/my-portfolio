@@ -24,10 +24,22 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center; 
+  justify-content: space-between; 
   padding: 30px 20px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 1000;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+} 
+
+/* Optional: Header appearance when scrolled */
+.header.scrolled {
+  padding: 20px;
+  box-shadow: 0 2px 15px rgba(0, 212, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
 }
 
 .brand {
@@ -269,9 +281,71 @@ body {
   padding: 0 20px 20px 20px;
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--cyan), var(--magenta));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top.show {
+  display: flex;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px);
+}
+
 .form {
   margin-top: 40px;
   max-width: 600px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.form-message {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.form-message.success {
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  display: block;
+}
+
+.form-message.error {
+  background: rgba(255, 0, 128, 0.1);
+  border: 1px solid var(--magenta);
+  color: var(--magenta);
+  display: block;
 }
 
 .input {
@@ -395,7 +469,10 @@ body {
   
   .header {
     flex-wrap: wrap;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg);
   }
   
   /* Show hamburger icon on mobile */
@@ -429,6 +506,36 @@ body {
     padding: 10px 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
   }
+}
+
+/* CENTER ALL CONTENT ON MOBILE */
+.section {
+  text-align: center;
+}
+
+.hero-left {
+  text-align: center;
+}
+
+.hero-right {
+  text-align: center;
+}
+
+.card {
+  text-align: left; /* Card content stays left-aligned */
+}
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials {
+  text-align: left; /* Testimonials stay left-aligned for readability */
+}
+
+.accordion {
+  text-align: left; /* FAQ stays left-aligned */
 }
 
 .fade {

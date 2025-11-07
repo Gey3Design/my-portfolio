@@ -125,17 +125,33 @@
   </section>
 
   <section class="section" id="contact">
-    <h3>Ready to Build Something Brilliant?</h3>
-    <p class="lead">Let's turn your idea into a clean, high-performing digital experience. Immediate responses during business hours.</p>
-    <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input class="input" type="text" name="name" placeholder="Your name" required aria-label="Your name">
-      <input class="input" type="email" name="email" placeholder="Email address" required aria-label="Email address">
-      <textarea rows="5" class="input" name="message" placeholder="Tell us about your project" required aria-label="Project description"></textarea>
-      <button type="submit" class="btn">Send Message</button>
-      <a class="btn btn-whatsapp" href="https://wa.me/2348037809027" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-    </form>
-    <p class="contact-info">Or email us directly: <a href="mailto:gey3koncept@gey3design.com.ng" class="contact-email">gey3koncept@gey3design.com.ng</a></p>
-  </section>
+  <h3>Ready to Build Something Brilliant?</h3>
+  <p class="lead">Let's turn your idea into a clean, high-performing digital experience. Immediate responses during business hours.</p>
+  
+  <form class="form" action="https://api.web3forms.com/submit" method="POST">
+    
+    <input type="hidden" name="access_key" value="1b4f5e62-9595-4020-8b7e-27821c514ad6">
+    <input type="hidden" name="subject" value="New Project Inquiry from Gey3Design Website">
+    
+    <!-- REMOVE THIS LINE: -->
+    <!-- <input type="hidden" name="redirect" value="https://gey3design.com.ng/#contact"> -->
+    
+    <label for="botcheck" class="hidden">Leave this field blank</label>
+    <input type="checkbox" name="botcheck" id="botcheck" class="hidden">
+    
+    <input class="input" type="text" name="name" placeholder="Your name" required aria-label="Your name">
+    <input class="input" type="email" name="email" placeholder="Email address" required aria-label="Email address">
+    <textarea rows="5" class="input" name="message" placeholder="Tell us about your project" required aria-label="Project description"></textarea>
+    
+    <button type="submit" class="btn">Send Message</button>
+    <a class="btn btn-whatsapp" href="https://wa.me/2348037809027" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+  </form>
+  
+  <!-- Add success/error message div -->
+  <div id="form-message" class="form-message"></div>
+  
+  <p class="contact-info">Or email us directly: <a href="mailto:gey3koncept@gey3design.com.ng" class="contact-email">gey3koncept@gey3design.com.ng</a></p>
+</section>
 
   <div class="social-links">
   <a href="https://wa.me/2348037809027" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
@@ -151,6 +167,11 @@
     <i class="fab fa-github"></i>
   </a>
 </div>
+
+<!-- Scroll to Top Button -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
 <div class="phone-contact">
   <i class="fas fa-phone"></i>
